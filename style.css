@@ -1,0 +1,116 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  background-color: #EEEAE4;
+  color: #2C2C2C;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 1.05em;
+  line-height: 1.7;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  padding: 2em 0 4em;
+}
+
+.container {
+  width: 68%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+header {
+  text-align: right;
+  margin-bottom: 2.8em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+}
+
+header h1 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 2.4em;
+  letter-spacing: 0.04em;
+  color: #2C2C2C;
+  text-shadow: none;
+}
+
+/* Typography */
+
+h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.9em;
+  margin-top: 2.4em;
+  text-shadow: none;
+}
+
+p {
+  margin-bottom: 1.1em;
+}
+
+/* Links */
+
+a {
+  color: #890101;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #DF3030;
+}
+
+/* Bio */
+
+.bio {
+  margin-bottom: 0.4em;
+}
+
+/* Projects */
+
+.projects ul,
+.elsewhere ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projects li {
+  margin-bottom: 0.85em;
+  padding-left: 0;
+}
+
+.elsewhere li {
+  margin-bottom: 0.4em;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 96%;
+  }
+
+  header h1 {
+    font-size: 1.9em;
+  }
+}
