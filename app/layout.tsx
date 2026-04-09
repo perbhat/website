@@ -28,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${lora.variable}`}>
-      <body className="min-h-screen py-8 pb-16 font-[var(--font-lora)]">
+      <body className="min-h-screen font-[var(--font-lora)]" style={{ padding: "2em 0 4em" }}>
         <div className="w-[68%] max-w-[680px] mx-auto max-[700px]:w-[90%] max-[480px]:w-[96%]">
-          <header className="text-right mb-11 pb-5 border-b border-[rgba(44,44,44,0.15)]">
+          <header className="text-right border-b border-[rgba(44,44,44,0.15)]" style={{ marginBottom: "2.8em", paddingBottom: "1.2em" }}>
             <h1 className="font-[var(--font-playfair)] font-normal text-[2.4em] tracking-[0.04em] text-[#2C2C2C] [text-shadow:none] max-[480px]:text-[1.9em]">
               Perbhat
             </h1>
