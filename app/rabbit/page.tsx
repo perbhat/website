@@ -18,7 +18,7 @@ export default function RabbitPage() {
         </Link>
       </div>
 
-      <h2 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1.8em] tracking-[0.02em] text-[#2C2C2C] [text-shadow:none] mb-6">
+      <h2 className="font-[var(--font-playfair)] font-normal text-[1.8em] tracking-[0.02em] text-[#2C2C2C] [text-shadow:none] mb-6">
         Rabbit
       </h2>
 
@@ -30,7 +30,7 @@ export default function RabbitPage() {
         </p>
       </section>
 
-      <h3 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
+      <h3 className="font-[var(--font-playfair)] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
         What it does
       </h3>
       <ul className="list-none p-0">
@@ -49,7 +49,7 @@ export default function RabbitPage() {
         </li>
       </ul>
 
-      <h3 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
+      <h3 className="font-[var(--font-playfair)] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
         Technical details
       </h3>
       <p className="mb-4 leading-[1.7]">
@@ -59,7 +59,7 @@ export default function RabbitPage() {
         Built to learn the fundamentals of real-time networked systems.
       </p>
 
-      <h3 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
+      <h3 className="font-[var(--font-playfair)] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
         Links
       </h3>
       <ul className="list-none p-0">

@@ -61,7 +61,7 @@ export default function NotFound() {
     <div className="flex flex-col items-center text-center mt-16">
       <PixelPig />
 
-      <p className="text-xl mb-2 font-['Playfair_Display',_'Times_New_Roman',_serif]">
+      <p className="text-xl mb-2 font-[var(--font-playfair)]">
         You found the dreamy pig!
       </p>
       <p className="text-[#888] mb-8">
