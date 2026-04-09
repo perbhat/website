@@ -1,11 +1,3 @@
-import Link from "next/link";
-
-const SectionHeading = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
-    {children}
-  </h2>
-);
-
 export default function Home() {
   return (
     <>
@@ -28,16 +20,10 @@ export default function Home() {
         </p>
       </section>
 
-      <SectionHeading>Selected work</SectionHeading>
+      <h2 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
+        Selected work
+      </h2>
       <ul className="list-none p-0">
-        <li className="mb-3">
-          <Link href="/glue">Glue</Link> — a native macOS
-          AI client that unifies models, tools, and workflows in one interface.
-        </li>
-        <li className="mb-3">
-          <Link href="/rabbit">Rabbit</Link> — a
-          multiplayer game built over raw sockets.
-        </li>
         <li className="mb-3">
           <a
             href="https://github.com/perbhat/DeepLearning"
@@ -94,7 +80,9 @@ export default function Home() {
         </li>
       </ul>
 
-      <SectionHeading>Elsewhere</SectionHeading>
+      <h2 className="font-['Playfair_Display',_'Times_New_Roman',_serif] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
+        Elsewhere
+      </h2>
       <ul className="list-none p-0">
         <li className="mb-2">
           <a
