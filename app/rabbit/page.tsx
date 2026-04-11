@@ -3,203 +3,67 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rabbit Reader",
   description:
-    "Understand anything you read, instantly. An AI reading assistant that lives in your browser.",
+    "Understand anything you read, instantly. An AI reading companion that lives in your browser.",
 };
 
 export default function RabbitPage() {
   return (
-    <div className="fixed inset-0 bg-white overflow-y-auto">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6">
-        <span className="text-2xl" role="img" aria-label="rabbit">
-          🐇
-        </span>
-        <a
-          href="https://chromewebstore.google.com"
-          target="_blank"
-          rel="noopener"
-          className="bg-[#1a1a1a] text-white text-sm font-medium px-5 py-2.5 rounded-full no-underline hover:bg-[#333] transition-colors"
+    <div style={{ maxWidth: 960, margin: "0 auto", padding: "120px 24px 80px", textAlign: "center" }}>
+      {/* Label */}
+      <p style={{ fontSize: 13, fontWeight: 400, letterSpacing: "0.2em", textTransform: "uppercase", color: "#999", marginBottom: 24 }}>
+        Meet Rabbit Reader
+      </p>
+
+      {/* Headline */}
+      <h1 style={{ fontSize: 72, fontWeight: 900, lineHeight: 1.1, letterSpacing: "-0.03em", color: "#1a1a1a", marginBottom: 32, textShadow: "none", maxWidth: 700, margin: "0 auto 32px", fontFamily: "inherit" }}>
+        understand more, not read less.
+      </h1>
+
+      {/* Description */}
+      <p style={{ fontSize: 18, lineHeight: 1.7, color: "#999", maxWidth: 640, margin: "0 auto 40px" }}>
+        an ai reading companion that clarifies anything you highlight — right where you&apos;re reading. you don&apos;t want a summary. you want to finish the article and actually understand it.
+      </p>
+
+      {/* CTA row */}
+      <div style={{ display: "inline-flex", alignItems: "center", borderRadius: 12, overflow: "hidden", border: "1px solid #e0e0e0", marginBottom: 20 }}>
+        <input
+          type="email"
+          placeholder="enter your email"
+          style={{ fontFamily: "inherit", fontSize: 16, padding: "16px 24px", border: "none", outline: "none", width: 260, color: "#1a1a1a", background: "#fff" }}
+        />
+        <button
+          style={{ fontFamily: "inherit", fontSize: 16, fontWeight: 700, padding: "16px 28px", background: "#666", color: "#fff", border: "none", cursor: "pointer", whiteSpace: "nowrap" }}
         >
           add to chrome
-        </a>
-      </nav>
+        </button>
+      </div>
 
-      {/* Hero */}
-      <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
-        <p className="text-xs font-medium tracking-[0.2em] uppercase text-[#999] mb-6">
-          meet rabbit reader
-        </p>
+      {/* Spacer */}
+      <div style={{ marginBottom: 80 }} />
 
-        <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight text-[#1a1a1a] max-w-3xl mb-8 [text-shadow:none]"
-            style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}>
-          understand anything you read, instantly.
-        </h1>
-
-        <p
-          className="text-lg leading-relaxed text-[#666] max-w-xl mb-10 [text-shadow:none]"
-          style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-        >
-          select any text on any webpage. rabbit reader explains it, summarizes
-          it, or digs deeper — right in your browser. no more copy-pasting into
-          chatgpt. no more switching tabs. just highlight and go.
-        </p>
-
-        <a
-          href="https://chromewebstore.google.com"
-          target="_blank"
-          rel="noopener"
-          className="bg-[#1a1a1a] text-white text-base font-medium px-8 py-3.5 rounded-full no-underline hover:bg-[#333] transition-colors mb-6"
-        >
-          add to chrome →
-        </a>
-
-        <p className="text-sm text-[#aaa] [text-shadow:none]">free to use · works on any webpage</p>
-      </main>
-
-      {/* How it works */}
-      <section className="py-24 px-6">
-        <div className="max-w-2xl mx-auto">
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[#999] mb-10 text-center">
-            how it works
-          </p>
-
-          <div className="space-y-12">
-            <div className="flex gap-6 items-start">
-              <span className="text-2xl font-bold text-[#ddd] [text-shadow:none] shrink-0">1</span>
-              <div>
-                <h3
-                  className="text-lg font-semibold text-[#1a1a1a] mb-1 [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  highlight any text
-                </h3>
-                <p
-                  className="text-[#666] [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  select a paragraph, a sentence, or a single word on any webpage.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6 items-start">
-              <span className="text-2xl font-bold text-[#ddd] [text-shadow:none] shrink-0">2</span>
-              <div>
-                <h3
-                  className="text-lg font-semibold text-[#1a1a1a] mb-1 [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  rabbit reader opens beside it
-                </h3>
-                <p
-                  className="text-[#666] [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  a sidebar appears with ai-powered explanations, summaries, and
-                  deeper research — powered by gpt and perplexity.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6 items-start">
-              <span className="text-2xl font-bold text-[#ddd] [text-shadow:none] shrink-0">3</span>
-              <div>
-                <h3
-                  className="text-lg font-semibold text-[#1a1a1a] mb-1 [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  keep reading
-                </h3>
-                <p
-                  className="text-[#666] [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  no tab-switching. no copy-paste. you stay on the page and move
-                  through complex material faster than ever.
-                </p>
-              </div>
-            </div>
+      {/* Use case cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, maxWidth: 720, margin: "0 auto 80px" }}>
+        {[
+          "what does quantitative easing actually mean here?",
+          "explain this legal clause in plain english",
+          "i don't get this machine learning paragraph",
+          "what's the context behind this policy change?",
+          "break down this financial analysis for me",
+          "help me understand this research method",
+        ].map((text) => (
+          <div
+            key={text}
+            style={{ background: "#f5f5f5", borderRadius: 12, padding: "24px 28px", fontSize: 17, lineHeight: 1.5, color: "#666", textAlign: "left" }}
+          >
+            &ldquo;{text}&rdquo;
           </div>
-        </div>
-      </section>
-
-      {/* Use cases */}
-      <section className="py-24 px-6 bg-[#fafafa]">
-        <div className="max-w-2xl mx-auto">
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[#999] mb-10 text-center">
-            built for people who read hard things
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[
-              { who: "researchers", what: "parsing dense arxiv papers" },
-              { who: "students", what: "studying textbooks and lecture notes" },
-              { who: "engineers", what: "reading technical documentation" },
-              { who: "analysts", what: "digesting long reports and filings" },
-              { who: "lawyers", what: "reviewing contracts and case law" },
-              { who: "curious people", what: "learning about anything online" },
-            ].map((item) => (
-              <div
-                key={item.who}
-                className="border border-[#eee] rounded-xl p-5 bg-white"
-              >
-                <p
-                  className="font-semibold text-[#1a1a1a] mb-1 [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  {item.who}
-                </p>
-                <p
-                  className="text-sm text-[#888] [text-shadow:none]"
-                  style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-                >
-                  {item.what}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 px-6 text-center">
-        <h2
-          className="text-3xl font-bold text-[#1a1a1a] mb-4 [text-shadow:none]"
-          style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-        >
-          stop struggling through complex reading.
-        </h2>
-        <p
-          className="text-[#666] mb-8 [text-shadow:none]"
-          style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-        >
-          join researchers at meta, microsoft, and amazon.
-        </p>
-        <a
-          href="https://chromewebstore.google.com"
-          target="_blank"
-          rel="noopener"
-          className="bg-[#1a1a1a] text-white text-base font-medium px-8 py-3.5 rounded-full no-underline hover:bg-[#333] transition-colors"
-        >
-          add to chrome →
-        </a>
-      </section>
+        ))}
+      </div>
 
       {/* Footer */}
-      <footer className="py-8 px-6 text-center border-t border-[#eee]">
-        <p
-          className="text-sm text-[#aaa] [text-shadow:none]"
-          style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
-        >
-          made by{" "}
-          <a
-            href="/"
-            className="text-[#666] hover:text-[#1a1a1a] transition-colors"
-          >
-            perbhat
-          </a>
-        </p>
-      </footer>
+      <p style={{ fontSize: 14, color: "#ccc" }}>
+        made by perbhat ♡
+      </p>
     </div>
   );
 }

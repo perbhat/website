@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rabbit Reader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #1a1a1a;
+      margin-bottom: 32px;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #999;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+
+    .cta-input {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      padding: 16px 24px;
+      border: none;
+      outline: none;
+      width: 260px;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    .cta-input::placeholder {
+      color: #ccc;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 28px;
+      background: #666;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+    }
+
+    .cta-button:hover {
+      background: #555;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 80px;
+    }
+
+    .subtitle a {
+      color: #999;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .subtitle a:hover {
+      color: #666;
+    }
+
+    .use-cases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto 80px;
+    }
+
+    .use-case {
+      background: #f5f5f5;
+      border-radius: 12px;
+      padding: 24px 28px;
+      font-size: 17px;
+      line-height: 1.5;
+      color: #666;
+      text-align: left;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 80px 20px 60px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .cta-input {
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .use-cases {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="label">Meet Rabbit Reader</div>
+
+    <h1>understand anything you read, instantly.</h1>
+
+    <p class="description">
+      highlight anything confusing in an article — jargon, dense paragraphs, unfamiliar concepts — and get a clear explanation right where you're reading. like a friend who just gets it.
+    </p>
+
+    <div class="cta-row">
+      <input type="email" class="cta-input" placeholder="enter your email">
+      <button class="cta-button">add to chrome</button>
+    </div>
+
+    <p class="subtitle">free to use · works on any webpage</p>
+
+    <div class="use-cases">
+      <div class="use-case">"what does quantitative easing actually mean here?"</div>
+      <div class="use-case">"explain this legal clause in plain english"</div>
+      <div class="use-case">"i don't get this machine learning paragraph"</div>
+      <div class="use-case">"what's the context behind this policy change?"</div>
+      <div class="use-case">"break down this financial analysis for me"</div>
+      <div class="use-case">"help me understand this research method"</div>
+    </div>
+
+    <div class="footer">made by perbhat ♡</div>
+  </div>
+</body>
+</html>
