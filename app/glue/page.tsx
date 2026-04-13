@@ -39,8 +39,8 @@ export default function GluePage() {
   return (
     <div className="fixed inset-0 bg-white overflow-y-auto z-50">
       <div className="max-w-[1100px] mx-auto px-6 py-20">
-        {/* Hero: text left, video right */}
-        <div className="flex items-center gap-12 mb-20 max-[768px]:flex-col">
+        <div className="flex items-center gap-12 max-[768px]:flex-col">
+          {/* Left: text + form */}
           <div className="flex-1 min-w-0">
             <h2 className="font-[var(--font-playfair)] font-normal text-[0.85em] tracking-[0.06em] text-[#999] [text-shadow:none] mb-3 uppercase">
               Meet Glue
@@ -56,34 +56,14 @@ export default function GluePage() {
               Figma could be if it was made today instead of 14 years ago.
             </p>
 
-            <p className="text-[#555] leading-[1.7] text-[1.05em]">
+            <p className="text-[#555] leading-[1.7] mb-10 text-[1.05em]">
               Unlike Figma, your designs are backed by code, and your agent can
               work with you to generate design systems, create variants, and
               implement changes in code fast.
             </p>
-          </div>
 
-          <div className="flex-1 min-w-0 rounded-xl overflow-hidden">
-            <video
-              src="/glue-demo.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full"
-            />
-          </div>
-        </div>
-
-        {/* Get Started */}
-        <div className="text-center mb-16">
-          {!submitted ? (
-            <>
-              <h3 className="font-[var(--font-playfair)] font-normal text-[1.4em] tracking-[0.02em] text-[#2C2C2C] [text-shadow:none] mb-8">
-                Get Started
-              </h3>
-
-              <div className="flex flex-col items-center gap-4 max-w-[400px] mx-auto">
+            {!submitted ? (
+              <div className="flex flex-col gap-4 max-w-[360px]">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -109,14 +89,8 @@ export default function GluePage() {
                   Get Started
                 </button>
               </div>
-            </>
-          ) : (
-            <>
-              <h3 className="font-[var(--font-playfair)] font-normal text-[1.4em] tracking-[0.02em] text-[#2C2C2C] [text-shadow:none] mb-6">
-                You&apos;re in
-              </h3>
-
-              <div className="flex flex-col items-center gap-4 max-w-[400px] mx-auto">
+            ) : (
+              <div className="flex flex-col gap-4 max-w-[360px]">
                 <a
                   href={DOWNLOAD_URL}
                   className="inline-flex items-center justify-center gap-2.5 w-full px-6 py-3 bg-[#1a1a1a] rounded-lg text-[0.95em] font-[var(--font-lora)] whitespace-nowrap transition-colors hover:bg-[#333]"
@@ -154,8 +128,20 @@ export default function GluePage() {
                   Book an onboarding call
                 </a>
               </div>
-            </>
-          )}
+            )}
+          </div>
+
+          {/* Right: video */}
+          <div className="flex-1 min-w-0 rounded-xl overflow-hidden">
+            <video
+              src="/glue-demo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full"
+            />
+          </div>
         </div>
       </div>
     </div>
