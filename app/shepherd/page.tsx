@@ -4,15 +4,34 @@ import { useState } from "react";
 
 const DOWNLOAD_URL =
   "https://github.com/perbhat/website/releases/download/shepherd-v1.0/Shepherd.dmg";
+const SUPABASE_URL = "https://jmxilnzsdszeveuxclhv.supabase.co";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpteGlsbnpzZHN6ZXZldXhjbGh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg5NjcwNjYsImV4cCI6MjA4NDU0MzA2Nn0.KXc08oE77tgVjtjEcfB_FICIEvjpNOsDjCgGbLCctXw";
 
 export default function ShepherdPage() {
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleDownload() {
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  async function handleDownload() {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || submitting) {
       return;
     }
+    setSubmitting(true);
+    try {
+      await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({ email, role: "shepherd" }),
+      });
+    } catch {
+      // still allow download even if save fails
+    }
     window.location.href = DOWNLOAD_URL;
+    setSubmitting(false);
   }
 
   const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
