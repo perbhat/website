@@ -25,12 +25,14 @@ export default function ShepherdPage() {
             placeholder="Enter your email"
             className="px-4 py-3 border border-[#ddd] rounded-lg text-[0.95em] w-[240px] outline-none focus:border-[#999] transition-colors font-[var(--font-lora)] text-[#2C2C2C]"
           />
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#888] text-white rounded-lg text-[0.95em] font-[var(--font-lora)] cursor-pointer hover:bg-[#777] transition-colors whitespace-nowrap"
-            onClick={() => window.location.href = "https://github.com/perbhat/website/releases/download/shepherd-v1.0/Shepherd.dmg"}
+          <a
+            href="https://github.com/perbhat/website/releases/download/shepherd-v1.0/Shepherd.dmg"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#888] text-white rounded-lg text-[0.95em] font-[var(--font-lora)] cursor-pointer hover:bg-[#777] transition-colors whitespace-nowrap"
+            style={{ textDecoration: "none", color: "white" }}
           >
             download for mac
             <span className="text-[1.1em]"></span>
-          </button>
+          </a>
         </div>
 
         <div className="mt-14 flex flex-wrap justify-center gap-x-10 gap-y-4 max-w-[520px]">
