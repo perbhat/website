@@ -38,20 +38,20 @@ export default function GluePage() {
 
   return (
     <div className="fixed inset-0 bg-white overflow-y-auto z-50">
-      <div className="max-w-[1200px] mx-auto px-8 py-20 max-[768px]:px-6">
-        <div className="flex items-center gap-16 max-[768px]:flex-col">
+      <div className="w-full px-8 py-20 max-[768px]:px-6">
+        <div className="flex items-center gap-10 max-[768px]:flex-col" style={{ maxWidth: "1400px", margin: "0 auto" }}>
           {/* Left: text + form */}
-          <div className="flex-1 min-w-0 text-left">
-            <h2 className="font-[var(--font-playfair)] font-normal text-[0.85em] tracking-[0.06em] text-[#999] [text-shadow:none] mb-3 uppercase">
+          <div className="w-[38%] shrink-0 text-left max-[768px]:w-full">
+            <h2 className="font-[var(--font-playfair)] font-normal text-[0.85em] tracking-[0.06em] text-[#999] [text-shadow:none] mb-1 uppercase">
               Meet Glue
             </h2>
 
-            <p className="text-[#888] leading-[1.6] mb-6 text-[1em]">
+            <p className="text-[#888] leading-[1.5] mb-8 text-[0.9em]">
               For claude designers, engineers, and code maximalists who spend a
               lot of time in Figma
             </p>
 
-            <p className="text-[#2C2C2C] leading-[1.6] mb-6 text-[1.35em]">
+            <p className="text-[#2C2C2C] leading-[1.5] mb-6 text-[1.35em]">
               Glue is the fastest way to design user interfaces. It&apos;s what
               Figma could be if it was made today instead of 14 years ago.
             </p>
@@ -132,7 +132,7 @@ export default function GluePage() {
           </div>
 
           {/* Right: video */}
-          <div className="flex-1 min-w-0 rounded-xl overflow-hidden">
+          <div className="flex-1 min-w-0 rounded-xl overflow-hidden max-[768px]:w-full">
             <video
               src="/glue-demo.mp4"
               autoPlay
