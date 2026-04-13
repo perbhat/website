@@ -47,19 +47,18 @@ export default function PicoPage() {
           Pico merely removes the tedium of standardizing your footage from S-Log3
           to a Rec.709 color space.
         </p>
-        <p className="mb-4 leading-[1.7]">Pico is for you.</p>
-      </section>
-      <ul className="list-none p-0">
-        <li className="mb-2">
+        <p className="mb-4 leading-[1.7]">
+          Pico is for you. Try it{" "}
           <a
             href="https://github.com/perbhat/agentic-color-grader"
             target="_blank"
             rel="noopener"
           >
-            Try it
+            here
           </a>
-        </li>
-      </ul>
+          .
+        </p>
+      </section>
     </>
   );
 }
