@@ -49,7 +49,7 @@ export default function GluePage() {
             </p>
 
             <p className="text-[#888] leading-[1.5] mb-8 text-[0.9em]">
-              For claude designers, engineers, and code maximalists who spend a
+              For designers, engineers, and claude code maximalists who spend a
               lot of time in Figma
             </p>
 
