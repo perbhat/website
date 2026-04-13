@@ -39,7 +39,7 @@ export default function GluePage() {
   return (
     <div className="fixed inset-0 z-50 flex max-[768px]:flex-col overflow-y-auto">
       <div className="w-[45%] max-[768px]:w-full bg-white flex items-center">
-        <div className="px-12 py-20 max-[768px]:px-6 max-w-[520px] ml-auto max-[768px]:ml-0">
+        <div className="px-12 py-20 max-[768px]:px-6 max-w-[520px] max-[768px]:ml-0">
             <h2 className="font-[var(--font-playfair)] font-normal text-[0.85em] tracking-[0.06em] text-[#999] [text-shadow:none] mb-1 uppercase">
               Meet Glue
             </h2>
