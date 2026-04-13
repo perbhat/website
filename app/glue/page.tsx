@@ -127,8 +127,6 @@ export default function GluePage() {
                 </a>
               </div>
             )}
-          </div>
-
         </div>
       </div>
 
