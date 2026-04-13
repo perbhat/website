@@ -38,30 +38,21 @@ export default function PicoPage() {
         </p>
       </section>
 
-      <h3 className="font-[var(--font-playfair)] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
-        What Pico is
-      </h3>
-      <p className="mb-4 leading-[1.7]">
-        Pico is one opinionated example. Pico is not an AI video editor. Pico is
-        a color corrector. Pico does not grade — you do.
-      </p>
-      <p className="mb-4 leading-[1.7]">
-        Pico merely removes the tedium of standardizing your footage from S-Log3
-        to a Rec.709 color space.
-      </p>
-
-      <h3 className="font-[var(--font-playfair)] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
-        Who Pico is for
-      </h3>
-      <p className="mb-4 leading-[1.7]">
-        Pico is for filmmakers who want to tell a story through their color
-        grade, without schlepping through monotony.
-      </p>
-      <p className="mb-4 leading-[1.7]">Pico is for you.</p>
-
-      <h3 className="font-[var(--font-playfair)] font-normal text-[1em] tracking-[0.08em] uppercase text-[#888] mb-4 mt-10 [text-shadow:none]">
-        Try it
-      </h3>
+      <section className="mb-8">
+        <p className="mb-4 leading-[1.7]">
+          Pico is one opinionated example. Pico is not an AI video editor. Pico is
+          a color corrector. Pico does not grade — you do.
+        </p>
+        <p className="mb-4 leading-[1.7]">
+          Pico merely removes the tedium of standardizing your footage from S-Log3
+          to a Rec.709 color space.
+        </p>
+        <p className="mb-4 leading-[1.7]">
+          Pico is for filmmakers who want to tell a story through their color
+          grade, without schlepping through monotony.
+        </p>
+        <p className="mb-4 leading-[1.7]">Pico is for you.</p>
+      </section>
       <ul className="list-none p-0">
         <li className="mb-2">
           <a
