@@ -37,11 +37,9 @@ export default function GluePage() {
   }
 
   return (
-    <div className="fixed inset-0 bg-white overflow-y-auto z-50">
-      <div className="w-full px-8 py-20 max-[768px]:px-6">
-        <div className="flex items-center gap-10 max-[768px]:flex-col" style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          {/* Left: text + form */}
-          <div className="w-[38%] shrink-0 text-left max-[768px]:w-full">
+    <div className="fixed inset-0 z-50 flex max-[768px]:flex-col overflow-y-auto">
+      <div className="w-[45%] max-[768px]:w-full bg-white flex items-center">
+        <div className="px-12 py-20 max-[768px]:px-6 max-w-[520px] ml-auto max-[768px]:ml-0">
             <h2 className="font-[var(--font-playfair)] font-normal text-[0.85em] tracking-[0.06em] text-[#999] [text-shadow:none] mb-1 uppercase">
               Meet Glue
             </h2>
@@ -131,18 +129,19 @@ export default function GluePage() {
             )}
           </div>
 
-          {/* Right: video */}
-          <div className="flex-1 min-w-0 rounded-xl overflow-hidden max-[768px]:w-full">
-            <video
-              src="/glue-demo.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full"
-            />
-          </div>
         </div>
+      </div>
+
+      {/* Right: video */}
+      <div className="w-[55%] max-[768px]:w-full bg-[#1a1a1a] flex items-center justify-center">
+        <video
+          src="/glue-demo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-[85%] rounded-xl"
+        />
       </div>
     </div>
   );
