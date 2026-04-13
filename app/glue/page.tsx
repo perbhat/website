@@ -44,6 +44,10 @@ export default function GluePage() {
               Meet Glue
             </h2>
 
+            <p className="text-[#888] leading-[1.5] mb-4 text-[0.9em] italic">
+              Backed by Y Combinator
+            </p>
+
             <p className="text-[#888] leading-[1.5] mb-8 text-[0.9em]">
               For claude designers, engineers, and code maximalists who spend a
               lot of time in Figma
