@@ -38,10 +38,10 @@ export default function GluePage() {
 
   return (
     <div className="fixed inset-0 bg-white overflow-y-auto z-50">
-      <div className="max-w-[1100px] mx-auto px-6 py-20">
-        <div className="flex items-center gap-12 max-[768px]:flex-col">
+      <div className="max-w-[1200px] mx-auto px-8 py-20 max-[768px]:px-6">
+        <div className="flex items-center gap-16 max-[768px]:flex-col">
           {/* Left: text + form */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 text-left">
             <h2 className="font-[var(--font-playfair)] font-normal text-[0.85em] tracking-[0.06em] text-[#999] [text-shadow:none] mb-3 uppercase">
               Meet Glue
             </h2>
