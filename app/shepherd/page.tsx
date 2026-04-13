@@ -27,9 +27,11 @@ export default function ShepherdPage() {
           />
           <a
             href="https://github.com/perbhat/website/releases/download/shepherd-v1.0/Shepherd.dmg"
-            className="px-5 py-3 bg-[#2C2C2C] text-white rounded-lg text-[0.95em] font-[var(--font-lora)] cursor-pointer hover:bg-[#444] transition-colors whitespace-nowrap no-underline hover:text-white"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#888] text-white rounded-lg text-[0.95em] font-[var(--font-lora)] cursor-pointer hover:bg-[#777] transition-colors whitespace-nowrap !no-underline !text-white hover:!text-white"
+            style={{ textDecoration: "none" }}
           >
-            Download for Mac
+            download for mac
+            <span className="text-[1.1em]"></span>
           </a>
         </div>
 
