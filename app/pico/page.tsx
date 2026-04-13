@@ -24,7 +24,7 @@ export default function PicoPage() {
 
       <section className="mb-8">
         <p className="mb-4 leading-[1.7]">
-          Pico is a Claude harness for color correction.
+          <a href="https://github.com/perbhat/agentic-color-grader" target="_blank" rel="noopener">Pico</a> is a Claude harness for color correction.
         </p>
         <p className="mb-4 leading-[1.7]">
           Instead of empowering creators to realize their visions, most AI tools
@@ -47,10 +47,6 @@ export default function PicoPage() {
           Pico merely removes the tedium of standardizing your footage from S-Log3
           to a Rec.709 color space.
         </p>
-        <p className="mb-4 leading-[1.7]">
-          Pico is for filmmakers who want to tell a story through their color
-          grade, without schlepping through monotony.
-        </p>
         <p className="mb-4 leading-[1.7]">Pico is for you.</p>
       </section>
       <ul className="list-none p-0">
@@ -60,7 +56,7 @@ export default function PicoPage() {
             target="_blank"
             rel="noopener"
           >
-            GitHub
+            Try it
           </a>
         </li>
       </ul>
