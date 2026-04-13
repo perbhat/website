@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const DOWNLOAD_URL =
   "https://github.com/perbhat/website/releases/download/glue-v1.0/Glue.Canvas.dmg";
-const SUPABASE_URL = "https://jmxilnzsdszeveuxclhv.supabase.co";
+const SUPABASE_URL = "https://tnimngitavxsxjfmwqhy.supabase.co";
 const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpteGlsbnpzZHN6ZXZldXhjbGh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg5NjcwNjYsImV4cCI6MjA4NDU0MzA2Nn0.KXc08oE77tgVjtjEcfB_FICIEvjpNOsDjCgGbLCctXw";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRuaW1uZ2l0YXZ4c3hqZm13cWh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMTAwODEsImV4cCI6MjA5MTY4NjA4MX0.WT4BvZUBnKq6yHkWQK-lVX15ABDnXNAdMQDB_fO_nng";
 
 export default function GluePage() {
   const [email, setEmail] = useState("");
@@ -20,14 +20,14 @@ export default function GluePage() {
     if (!isValid || submitting) return;
     setSubmitting(true);
     try {
-      await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+      await fetch(`${SUPABASE_URL}/rest/v1/glue_signups`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           apikey: SUPABASE_ANON_KEY,
           Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
         },
-        body: JSON.stringify({ email, role: `glue: ${building}` }),
+        body: JSON.stringify({ email, building }),
       });
     } catch {
       // still allow download
