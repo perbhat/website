@@ -1,12 +1,22 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Shepherd — Perbhat",
-  description:
-    "Shepherd: an AI companion that lives on your Mac, sees your screen, and walks you through whatever you're working on.",
-};
+import { useState } from "react";
+
+const DOWNLOAD_URL =
+  "https://github.com/perbhat/website/releases/download/shepherd-v1.0/Shepherd.dmg";
 
 export default function ShepherdPage() {
+  const [email, setEmail] = useState("");
+
+  function handleDownload() {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return;
+    }
+    window.location.href = DOWNLOAD_URL;
+  }
+
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
   return (
     <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
       <div className="text-center max-w-[520px] px-6">
@@ -23,18 +33,30 @@ export default function ShepherdPage() {
           <input
             type="email"
             placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleDownload()}
             className="px-4 py-3 border border-[#ddd] rounded-lg text-[0.95em] w-[240px] outline-none focus:border-[#999] transition-colors font-[var(--font-lora)] text-[#2C2C2C]"
           />
-          <a
-            href="https://github.com/perbhat/website/releases/download/shepherd-v1.0/Shepherd.dmg"
-            className="inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-[#1a1a1a] text-white rounded-lg text-[0.95em] font-[var(--font-lora)] cursor-pointer hover:bg-[#333] transition-colors whitespace-nowrap"
-            style={{ textDecoration: "none", color: "white" }}
+          <button
+            onClick={handleDownload}
+            className={`inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg text-[0.95em] font-[var(--font-lora)] whitespace-nowrap transition-colors ${
+              isValid
+                ? "bg-[#1a1a1a] text-white cursor-pointer hover:bg-[#333]"
+                : "bg-[#ccc] text-white cursor-not-allowed"
+            }`}
           >
-            <svg width="16" height="20" viewBox="0 0 814 1000" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57.8-155.5-127.4c-58.3-81.5-105.3-208.5-105.3-329 0-193.1 125.7-295.6 249.3-295.6 65.8 0 120.8 43.4 162.1 43.4 39.3 0 100.5-46 175.4-46 28.3 0 130.1 2.6 197.1 99.6zm-234.7-182.6c31.2-36.9 53.4-88.1 53.4-139.3 0-7.1-.6-14.3-1.9-20.1-50.9 1.9-110.6 33.9-146.9 75.8-28.3 32-56.1 83.2-56.1 135.1 0 7.8.6 15.6 1.3 18.2 2.6.6 6.4 1.3 10.2 1.3 45.7 0 103-30.6 140-71z"/>
+            <svg
+              width="16"
+              height="20"
+              viewBox="0 0 814 1000"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57.8-155.5-127.4c-58.3-81.5-105.3-208.5-105.3-329 0-193.1 125.7-295.6 249.3-295.6 65.8 0 120.8 43.4 162.1 43.4 39.3 0 100.5-46 175.4-46 28.3 0 130.1 2.6 197.1 99.6zm-234.7-182.6c31.2-36.9 53.4-88.1 53.4-139.3 0-7.1-.6-14.3-1.9-20.1-50.9 1.9-110.6 33.9-146.9 75.8-28.3 32-56.1 83.2-56.1 135.1 0 7.8.6 15.6 1.3 18.2 2.6.6 6.4 1.3 10.2 1.3 45.7 0 103-30.6 140-71z" />
             </svg>
             Download for Mac
-          </a>
+          </button>
         </div>
 
         <div className="mt-14 flex flex-wrap justify-center gap-x-10 gap-y-4 max-w-[520px]">
