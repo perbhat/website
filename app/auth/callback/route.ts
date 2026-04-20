@@ -6,13 +6,20 @@ export async function GET(request: Request) {
   const code = searchParams.get("code");
   const next = searchParams.get("next") ?? "/transcribe";
 
-  if (code) {
-    const supabase = await createClient();
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) {
-      return NextResponse.redirect(`${origin}${next}`);
-    }
+  if (!code) {
+    return NextResponse.redirect(
+      `${origin}/transcribe?error=${encodeURIComponent("missing_code")}`
+    );
   }
 
-  return NextResponse.redirect(`${origin}/transcribe?error=auth`);
+  const supabase = await createClient();
+  const { error } = await supabase.auth.exchangeCodeForSession(code);
+  if (error) {
+    console.error("exchangeCodeForSession failed:", error);
+    return NextResponse.redirect(
+      `${origin}/transcribe?error=${encodeURIComponent(error.message)}`
+    );
+  }
+
+  return NextResponse.redirect(`${origin}${next}`);
 }
