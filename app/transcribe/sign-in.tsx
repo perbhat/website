@@ -74,7 +74,7 @@ export default function SignIn() {
             textShadow: "2px 2px 0 #d9cbb0",
           }}
         >
-          TRANSCRIBE.EXE
+          multi-speaker transcribe
         </h1>
 
         <section
