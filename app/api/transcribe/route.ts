@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
   const transcribeBody: Record<string, unknown> = {
     audio_url: audioUrl,
     speaker_labels: true,
+    speech_model: "universal-2",
   };
 
   const speakersRaw = body.speakers_expected;
