@@ -36,9 +36,7 @@ type Part = {
 };
 
 const MAX_PARTS = 5;
-const MAX_UPLOAD_BYTES = 500 * 1024 * 1024;
-const STORAGE_BUCKET = "transcribe-audio";
-const SIGNED_URL_TTL_SECONDS = 60 * 60;
+const MAX_UPLOAD_BYTES = 2 * 1024 * 1024 * 1024; // 2 GB
 
 const SPEAKER_CHOICES: SpeakersSetting[] = ["auto", 2, 3, 4, 5, 6];
 
@@ -203,38 +201,36 @@ export default function TranscribeClient({
     });
 
     try {
-      const supabase = createClient();
-      const {
-        data: { user },
-        error: userErr,
-      } = await supabase.auth.getUser();
-      if (userErr || !user) throw new Error("Not signed in");
+      const contentType = file.type || "application/octet-stream";
 
-      const ext = (file.name.split(".").pop() || "bin").toLowerCase();
-      const path = `${user.id}/${Date.now()}-${Math.random()
-        .toString(36)
-        .slice(2, 8)}.${ext}`;
+      const signRes = await fetch("/api/transcribe/upload-url", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          fileName: file.name,
+          contentType,
+        }),
+      });
+      const signData = await signRes.json();
+      if (!signRes.ok) {
+        throw new Error(signData.error || "Could not get upload URL");
+      }
 
-      const { error: upErr } = await supabase.storage
-        .from(STORAGE_BUCKET)
-        .upload(path, file, {
-          contentType: file.type || "application/octet-stream",
-          upsert: false,
-        });
-      if (upErr) throw new Error(`Upload failed: ${upErr.message}`);
-
-      const { data: signed, error: signErr } = await supabase.storage
-        .from(STORAGE_BUCKET)
-        .createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
-      if (signErr || !signed?.signedUrl) {
-        throw new Error(signErr?.message || "Could not sign URL");
+      const putRes = await fetch(signData.uploadUrl, {
+        method: "PUT",
+        headers: { "content-type": contentType },
+        body: file,
+      });
+      if (!putRes.ok) {
+        const txt = await putRes.text().catch(() => "");
+        throw new Error(`Upload failed: ${putRes.status} ${txt.slice(0, 200)}`);
       }
 
       const res = await fetch("/api/transcribe", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          audio_url: signed.signedUrl,
+          audio_url: signData.readUrl,
           speakers_expected:
             part.speakers === "auto" ? "auto" : String(part.speakers),
         }),
@@ -682,7 +678,7 @@ function PartPanel({
           part={part}
           label={
             part.status === "uploading"
-              ? "uploading to assemblyai"
+              ? "uploading"
               : part.status === "queued"
                 ? "in the queue"
                 : "transcribing & diarizing"
