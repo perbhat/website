@@ -62,10 +62,10 @@ export default function NotFound() {
       <PixelPig />
 
       <p className="text-xl mb-2 font-[var(--font-playfair)]">
-        You found the dreamy pig!
+        You&apos;ve found Piggy.
       </p>
       <p className="text-[#888] mb-8">
-        This page doesn&apos;t exist though.
+        This page doesn&apos;t exist yet, but it might soon. Stay tuned!
       </p>
       <Link href="/" className="text-sm tracking-[0.04em]">
         ← Go home
