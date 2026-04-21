@@ -1085,6 +1085,50 @@ function Footer() {
       >
         MADE WITH &lt;3 BY PERBHAT
       </span>
+      <a
+        href="https://talktoreview.com/perbhat-kumar"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Give me feedback"
+        style={{
+          position: "fixed",
+          bottom: 24,
+          right: 24,
+          width: 52,
+          height: 52,
+          borderRadius: "50%",
+          background: "#3d2f1f",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+          textDecoration: "none",
+          transition: "transform 0.15s, box-shadow 0.15s",
+          zIndex: 100,
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.1)";
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 14px rgba(0,0,0,0.4)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#e8ddd0"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+      </a>
     </div>
   );
 }
